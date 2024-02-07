@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPEECH RECOGNITION</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <video autoplay muted loop id="backgroundVideo">
+        <source src="./shipping_-_8809 (1080p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="container">
+        <h1>Voice Recognition</h1>
+        <textarea placeholder="Your voice message will appear here.." id="speechToText" readonly></textarea>
+        <button onclick="voice()">Click to Speak</button>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
