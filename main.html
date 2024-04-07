@@ -1,21 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPEECH RECOGNITION</title>
-    <link rel="stylesheet" href="main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Recognition</title>
+  <link rel="stylesheet" href="Voicerecognition.css">
+  <link rel="stylesheet" href="vr.css">
 </head>
 <body>
-    <video autoplay muted loop id="backgroundVideo">
-        <source src="./shipping_-_8809 (1080p).mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="container">
-        <h1>Voice Recognition</h1>
-        <textarea placeholder="Your voice message will appear here.." id="speechToText" readonly></textarea>
-        <button onclick="voice()">Click to Speak</button>
+
+<div class='voice'>
+  <div class="voiceRecognitionContainer">
+    <h1>Voice Recognition</h1>
+    <div class="voiceRecognitionControls">
+        <select id="languageSelect">
+            <option value="am-ET">Amharic</option>
+                    <option value="ar-SA">Arabic</option>
+                    <option value="as-IN">Assamese</option>
+                    <option value="be-BY">Bielarus</option>
+                    <option value="bem-ZM">Bemba</option>
+                    <option value="bi-VU">Bislama</option>
+                    <option value="bjs-BB">Bajan</option>
+                    <option value="bn-IN">Bengali</option>
+                    <option value="bo-CN">Tibetan</option>
+                    <option value="br-FR">Breton</option>
+                    <option value="bs-BA">Bosnian</option>
+                    <option value="ca-ES">Catalan</option>
+                    <option value="cop-EG">Coptic</option>
+                    <option value="cs-CZ">Czech</option>
+                    <option value="cy-GB">Welsh</option>
+                    <option value="da-DK">Danish</option>
+                    <option value="dz-BT">Dzongkha</option>
+                    <option value="de-DE">German</option>
+                    <option value="dv-MV">Maldivian</option>
+                    <option value="el-GR">Greek</option>
+                    <option value="en-GB">English</option>
+                    <option value="es-ES">Spanish</option>
+                    <option value="et-EE">Estonian</option>
+                    <option value="eu-ES">Basque</option>
+                    <option value="fa-IR">Persian</option>
+                    <option value="fi-FI">Finnish</option>
+                    <option value="fn-FNG">Fanagalo</option>
+                    <option value="fo-FO">Faroese</option>
+                    <option value="fr-FR">French</option>
+                    <option value="gl-ES">Galician</option>
+                    <option value="gu-IN">Gujarati</option>
+                    <option value="ha-NE">Hausa</option>
+                    <option value="he-IL">Hebrew</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="hr-HR">Croatian</option>
+                    <option value="hu-HU">Hungarian</option>
+                    <option value="id-ID">Indonesian</option>
+                    <option value="is-IS">Icelandic</option>
+                    <option value="it-IT">Italian</option>
+                    <option value="ja-JP">Japanese</option>
+                    <option value="kk-KZ">Kazakh</option>
+                    <option value="km-KM">Khmer</option>
+                    <option value="kn-IN">Kannada</option>
+                    <option value="ko-KR">Korean</option>
+                    <option value="ku-TR">Kurdish</option>
+                    <option value="ky-KG">Kyrgyz</option>
+                    <option value="la-VA">Latin</option>
+                    <option value="lo-LA">Lao</option>
+                    <option value="lv-LV">Latvian</option>
+                    <option value="men-SL">Mende</option>
+                    <option value="mg-MG">Malagasy</option>
+                    <option value="mi-NZ">Maori</option>
+                    <option value="ml-IN">Malayalam</option>
+                    <option value="ms-MY">Malay</option>
+                    <option value="mt-MT">Maltese</option>
+                    <option value="my-MM">Burmese</option>
+                    <option value="ne-NP">Nepali</option>
+                    <option value="niu-NU">Niuean</option>
+                    <option value="nl-NL">Dutch</option>
+                    <option value="no-NO">Norwegian</option>
+                    <option value="ny-MW">Nyanja</option>
+                    <option value="ur-PK">Pakistani</option>
+                    <option value="pau-PW">Palauan</option>
+                    <option value="pa-IN">Punjabi</option>
+                    <option value="ps-PK">Pashto</option>
+                    <option value="pis-SB">Pijin</option>
+                    <option value="pl-PL">Polish</option>
+                    <option value="pt-PT">Portuguese</option>
+                    <option value="rn-BI">Kirundi</option>
+                    <option value="ro-RO">Romanian</option>
+                    <option value="ru-RU">Russian</option>
+                    <option value="sg-CF">Sango</option>
+                    <option value="sa-IN">Sanskrit</option>
+                    <option value="si-LK">Sinhala</option>
+                    <option value="sk-SK">Slovak</option>
+                    <option value="sm-WS">Samoan</option>
+                    <option value="sn-ZW">Shona</option>
+                    <option value="so-SO">Somali</option>
+                    <option value="sq-AL">Albanian</option>
+                    <option value="sr-RS">Serbian</option>
+                    <option value="sv-SE">Swedish</option>
+                    <option value="sw-SZ">Swahili</option>
+                    <option value="ta-IN">Tamil</option>
+                    <option value="te-IN">Telugu</option>
+                    <option value="tet-TL">Tetum</option>
+                    <option value="tg-TJ">Tajik</option>
+                    <option value="th-TH">Thai</option>
+                    <option value="ti-TI">Tigrinya</option>
+                    <option value="tk-TM">Turkmen</option>
+                    <option value="tl-PH">Tagalog</option>
+                    <option value="tn-BW">Tswana</option>
+                    <option value="to-TO">Tongan</option>
+                    <option value="tr-TR">Turkish</option>
+                    <option value="uk-UA">Ukrainian</option>
+                    <option value="ur-IN">Urdu</option>
+                    <option value="uz-UZ">Uzbek</option>
+                    <option value="vi-VN">Vietnamese</option>
+                    <option value="wo-SN">Wolof</option>
+                    <option value="xh-ZA">Xhosa</option>
+                    <option value="yi-YD">Yiddish</option>
+                    <option value="zu-ZA">Zulu</option>
+                    <option value="bho-IN">Bhojpuri</option>
+                    <option value="kok-IN">Konkani</option>
+                    <option value="mr-IN">Marathi</option>
+                    <option value="or-IN">Odia</option>
+                    <option value="sa-IN">Sanskrit</option>
+                    <option value="sd-IN">Sindhi</option>
+            </select>
+      <button id="copyTextBtn">Copy Text</button>
+      <button id="clearTextBtn">Clear All</button>
     </div>
-    <script src="main.js"></script>
+    <textarea
+      class="voiceRecognitionTextarea"
+      placeholder="Your voice message will appear here.."
+      readonly
+    ></textarea>
+    <button class="cl" id="speakBtn">Click to Speak</button>
+  </div>
+</div>
+<script src="./vr.js"></script>
 </body>
 </html>
